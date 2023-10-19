@@ -1,0 +1,212 @@
+Nama : Imam Soleh Sallahuddin
+Nim : F1B021123
+
+1.
+Membuat attribut dari sebuah class dan buatkan objek
+
+package PBO;
+
+class Hp {
+    String nama;
+    String series;
+}
+
+public class Main {
+
+    public static void main(String[]args) throws Exception {
+        
+        Hp Samsung = new Hp();
+        Samsung.nama = "Samsung Galaxy";
+        Samsung.series = "A21S";
+        
+        System.out.println(Samsung.nama);
+        System.out.println(Samsung.series);
+        
+    }
+}
+
+
+2.
+
+Membuat 5 attribut kemudian tampilkan dalam 2 objek yang berbeda
+
+package PBO;
+
+class Hp {
+    String nama;
+    String series;
+    int ram;
+    int memory;
+    String battery;
+}
+
+public class Main {
+
+    public static void main(String[]args) throws Exception {
+        
+        Hp Samsung = new Hp();
+        Samsung.nama = "Samsung Galaxy";
+        Samsung.series = "A21S";
+        Samsung.ram = 8;
+        Samsung.memory = 128;
+        Samsung.battery = "5000 mAh";
+        
+        Hp Huawei = new Hp();
+        Huawei.nama = "Huawei";
+        Huawei.series = "Nova 5T";
+        Huawei.ram = 8;
+        Huawei.memory = 256;
+        Huawei.battery = "5000 mAh";
+        
+        System.out.println(Samsung.nama);
+        System.out.println(Samsung.series);
+        System.out.println(Samsung.ram);
+        System.out.println(Samsung.memory);
+        System.out.println(Samsung.battery);
+        
+        System.out.println(Huawei.nama);
+        System.out.println(Huawei.series);
+        System.out.println(Huawei.ram);
+        System.out.println(Huawei.memory);
+        System.out.println(Huawei.battery);
+    }
+}
+
+
+3.
+Membuat class dan method
+
+package PBO;
+
+class Hp {
+    String nama;
+    String series;
+    int ram;
+    int memory;
+    String battery;
+    
+    void tampilkan(){
+        System.out.println(nama);
+        System.out.println(series);
+        System.out.println(ram);
+        System.out.println(memory);
+        System.out.println(battery);
+    }
+}
+
+public class Main {
+
+    public static void main(String[]args) throws Exception {
+        
+        Hp Samsung = new Hp();
+        Samsung.nama = "Samsung Galaxy";
+        Samsung.series = "A21S";
+        Samsung.ram = 8;
+        Samsung.memory = 128;
+        Samsung.battery = "5000 mAh";
+        
+        Hp Huawei = new Hp();
+        Huawei.nama = "Huawei";
+        Huawei.series = "Nova 5T";
+        Huawei.ram = 8;
+        Huawei.memory = 256;
+        Huawei.battery = "5000 mAh";
+        
+        Samsung.tampilkan();
+        Huawei.tampilkan();
+    }
+}
+
+
+4.
+Membuat program inputan dinamis menggunakan studi kasus masing-masing dengan 5 buah objek yang berbeda
+
+package PBO;
+
+import java.util.Scanner;
+
+class Kalimat {
+    private String teks;
+
+    Kalimat(String teks) {
+        this.teks = teks;
+    }
+
+    int hitungPanjang() {
+        return teks.length();
+    }
+}
+
+public class PanjangKalimat {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Kalimat[] kalimatArray = new Kalimat[5];
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Masukkan kalimat " + (i + 1) + ": ");
+            String teks = scanner.nextLine();
+            Kalimat kalimat = new Kalimat(teks);
+            kalimatArray[i] = kalimat;
+        }
+
+        for (int i = 0; i < 5; i++) {
+            Kalimat kalimat = kalimatArray[i];
+            int panjang = kalimat.hitungPanjang();
+            System.out.println("Panjang kalimat " + (i + 1) + ": " + panjang + " karakter");
+        }
+    }
+}
+
+
+5.
+Membuat Objek Konstruktor dari 2 kelas yang berbeda masing masing 2 objek
+
+package PBO;
+
+class Mahasiswa {
+    String nama;
+    String alamat;
+    
+    Mahasiswa(String inputNama, String inputAlamat){
+        nama = inputNama;
+        alamat = inputAlamat;
+        
+    }
+}
+
+class Dosen {
+    String nama;
+    int umur;
+    
+    Dosen(String inputNama, int inputUmur) {
+        nama = inputNama;
+        umur = inputUmur;
+    }
+    
+}
+
+public class Kuliah {
+    public static void main(String[]args)throws Exception {
+        
+        Mahasiswa mahasiswa1 = new Mahasiswa("Reza", "Ampenan");
+        Mahasiswa mahasiswa2 = new Mahasiswa("Rasya", "Monjok");
+        
+       System.out.println("== Mahasiswa ==");
+        System.out.println("1. Nama : " + mahasiswa1.nama);
+        System.out.println("   Alamat : " + mahasiswa1.alamat);
+        System.out.println("2. Nama : " + mahasiswa2.nama);
+        System.out.println("   Alamat : " + mahasiswa2.alamat);
+        
+        Dosen dosen1 = new Dosen("Suharto", 30);
+        Dosen dosen2 = new Dosen("Munir", 35);
+        
+        System.out.println("");
+        
+        System.out.println("== Dosen ==");
+        System.out.println("1. Nama : " + dosen1.nama);
+        System.out.println("   Umur : " + dosen1.umur + " tahun");
+        System.out.println("2. Nama : " + dosen2.nama);
+        System.out.println("   Umur : " + dosen2.umur + " tahun");
+    }
+}
+
